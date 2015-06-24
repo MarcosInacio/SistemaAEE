@@ -8,20 +8,17 @@ public class Lojista {
 	private String cnpj;
 	private String nome;
 	private String senha;
-	private Restaurante[] restaurantes;
+	private ArrayList<Restaurante> restaurante = new ArrayList<Restaurante>();
 	private int saldo;
 	
 	
-	public Lojista(){
-		
-	}
+	public Lojista(){}
 	
-	public Lojista(String cnpj, String nome, int tam)
+	public Lojista(String cnpj, String nome)
 	{
 		
 		this.cnpj = cnpj;
 		this.nome = nome;
-		this.restaurantes = new Restaurante[tam];
 		
 		
 	}
@@ -72,7 +69,16 @@ public class Lojista {
 	{
 		this.senha = senha;
 	}
-    public void cadastraLojista()
+  
+	
+	public void addRestaurante(Restaurante restaurante){
+		
+		(this.restaurante).add(restaurante);
+		
+	}
+	
+	
+	public void cadastraLojista()
     {
 		ArrayList<Lojista> loj = new ArrayList<Lojista>(); 
 		

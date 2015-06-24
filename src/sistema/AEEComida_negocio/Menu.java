@@ -8,7 +8,7 @@ public Menu(){
 		
 	}
 	public void meuMenu(){
-		RepositorioUsuario repo = new RepositorioUsuario(3);
+		RepositorioUsuario repo = new RepositorioUsuario();
 		Usuario user = new Usuario();
 		Lojista loj = new Lojista();
 		BuscarCep cep = new BuscarCep();

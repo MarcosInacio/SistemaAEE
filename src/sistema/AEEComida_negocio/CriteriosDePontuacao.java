@@ -3,6 +3,7 @@ package sistema.AEEComida_negocio;
 public class CriteriosDePontuacao {
 	private int primeiroCriterio = 0;
 	private int segundoCriterio = 0;
+	private int acumuloDePontos;
 	
 	public  CriteriosDePontuacao() {
 		
@@ -24,5 +25,8 @@ public class CriteriosDePontuacao {
 	}
 	public int getSegundoCriterio(){
 		return segundoCriterio;
+	}
+	public void setAcumuloPontos(){
+		
 	}
 }	

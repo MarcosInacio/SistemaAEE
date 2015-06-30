@@ -3,35 +3,28 @@ package sistema.AEEComida_negocio;
 import java.util.Scanner;
 import sistema.AEEComida_dados.*;
 
+
 public class Menu {
-public Menu(){
+	public Menu(){
 		
 	}
 	public void meuMenu(){
+		
+		Scanner input = new Scanner(System.in);
+		
 		RepositorioUsuario repo = new RepositorioUsuario();
 		Usuario user = new Usuario();
 		Lojista loj = new Lojista();
 		BuscarCep cep = new BuscarCep();
 		LogarSistema logar = new LogarSistema();
 		ExitSistema saida = new ExitSistema();
-	/*	System.out.println("\tAEE! COMIDA\n");
-		System.out.println("1- Cadastrar usuário");
-		System.out.println("2- Cadastrar Lojista");
-		System.out.println("3- Buscar por CEP");
-		System.out.println("4- Logar no sistema");
-		System.out.println("5- Exit do sistema"); */
+		
 		System.out.println(this); 
-		int var;
-		Scanner input = new Scanner(System.in);
+		int var=0;
+		
 		System.out.println("Digite sua opção: ");
 		var = input.nextInt();
 		
-		while(var < 1 || var > 5)
-		{
-			System.out.println("Numero invalido!");
-			System.out.println("Digite o numero novamente: ");
-			var = input.nextInt();
-		}
 		switch(var)
 		{
 		
@@ -47,7 +40,7 @@ public Menu(){
 			break;
 			
 		case 3:
-			cep.BuscarCep(var);
+			cep.BuscarCEP(var);
 			break;
 			
 		case 4:
@@ -56,6 +49,9 @@ public Menu(){
 		
 		case 5:
 			saida.ExitSaida();
+			break;
+		default: 
+			meuMenu();
 	    }
 		
 		input.close();

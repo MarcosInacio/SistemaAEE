@@ -7,7 +7,8 @@ public class LogarSistema {
 		
 	}
 	Scanner input = new Scanner(System.in);
-	Menu meuM = new Menu();
+	//Menu meuM = new Menu();
+	BuscarCep buscar = new BuscarCep();
 	public void logarAcesso(){
 		System.out.println("Digite seu login: ");
 		String login = input.next();
@@ -16,7 +17,9 @@ public class LogarSistema {
 		if(senha != null && login !=null && login != ""){
 			System.out.println("Logado com sucesso!");
 		}
-		meuM.meuMenu();
+		buscar.BuscarCEP(0);
+		
+		//meuM.meuMenu();
 	}
 }
 

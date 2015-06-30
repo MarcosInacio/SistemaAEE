@@ -11,7 +11,7 @@ public class BuscarCep {
 		busca=0;
 	}
 	Menu meuM = new Menu();
-	public void BuscarCep(int numBusca)
+	public void BuscarCEP(int numBusca)
 	{
 		System.out.println("\nDigite seu CEP com 8 numeros para sabermos sua localidade: ");
 		numBusca = scanner.nextInt();
@@ -23,7 +23,7 @@ public class BuscarCep {
 		}
 		else
 		{
-			BuscarCep(busca);
+			BuscarCEP(busca);
 		}
 	}
 	public void ListRestaurante()

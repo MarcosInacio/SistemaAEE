@@ -1,6 +1,8 @@
 package sistema.AEEComida_dados;
 
 import sistema.AEEComida_negocio.Lojista;
+import sistema.AEEComida_negocio.Restaurante;
+
 import java.util.ArrayList;
 
 
@@ -9,6 +11,12 @@ public class RepositorioLojista implements IRepositorioLojista {
 	ArrayList<Lojista> arrayLojista = new ArrayList<Lojista>();
 	
 	public RepositorioLojista(){}
+	
+	public ArrayList<Lojista> getArrayLojista(){
+		
+		return arrayLojista;
+	}
+	
 	
 	@Override
 	public void salvaCadastroLojista(Lojista lojista){

@@ -103,5 +103,11 @@ public class Restaurante {
 		
 	}
 	
+	public String toString(){
+		
+		return this.nome + "\t" + this.rua + "\t" + this.cidade + "\n" +
+		this.bairro + "\t" + this.cep + "\t" + this.tipo;
+	}
+	
 	
 }

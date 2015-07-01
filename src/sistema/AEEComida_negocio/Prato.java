@@ -12,7 +12,6 @@ public class Prato {
 	public Prato(){
 		this.avaliacao = 0;
 		this.contAvaliacoes = 0;
-		
 	}
 	
 	
@@ -25,7 +24,6 @@ public class Prato {
 		this.contAvaliacoes = 0;
 		
 	}
-
 
 
 	public String getNome() {

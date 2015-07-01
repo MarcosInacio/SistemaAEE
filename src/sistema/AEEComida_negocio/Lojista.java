@@ -8,7 +8,7 @@ public class Lojista {
 	private String cnpj;
 	private String nome;
 	private String senha;
-	private ArrayList<Restaurante> restaurante = new ArrayList<Restaurante>();
+	private ArrayList<Restaurante> restaurante;
 	private int saldo;
 	
 	
@@ -19,10 +19,19 @@ public class Lojista {
 		
 		this.cnpj = cnpj;
 		this.nome = nome;
+		restaurante = new ArrayList<Restaurante>();
 		
 		
 	}
 	
+	
+	
+	public ArrayList<Restaurante> getRestaurante() {
+		return restaurante;
+	}
+
+
+
 	MenuLojista menu = new MenuLojista();
 	public String getCnpj() 
 	{

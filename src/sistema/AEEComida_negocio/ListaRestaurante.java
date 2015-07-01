@@ -10,37 +10,7 @@ public class ListaRestaurante {
 	}
 	public void ListRestaurante()
 	{
-		/*ArrayList <String> nomesRestaurante = new ArrayList<String>();
-	    nomesRestaurante.add("RestauranteZe");
-	    nomesRestaurante.add("RestauranteGoodPrice");
-	    nomesRestaurante.add("ComedoriaJoaquina");
-	    
-	    Scanner input = new Scanner(System.in);
-	        
-	     for(String nome: nomesRestaurante )
-	     {
-	         System.out.println(nome);
-	     }
-	     System.out.print("\n");
-	     System.out.println("Escolha o restaurante que quer o cardapio");
-	        
-	     String nomeRestaurante = input.next();
-         boolean nomeRestaurante1=false;
-	        
-         for(int i=0; i<nomesRestaurante.size();i++)
-	     {
-        	 if(nomeRestaurante.equals(nomesRestaurante.get(i)))
-	         {
-        		 System.out.println("O nome do restaurante eh " +nomeRestaurante);
-	             nomeRestaurante1 = true;//BuscaCEP(busca);
-	            // meuM.meuMenu();
-	         }
-	           
-	     }
-        if(nomeRestaurante1 == false){
-        	ListRestaurante();
-	    }
-	        */
+		
 		RepositorioLojista repp = new RepositorioLojista();
 		Lojista lojista1 = new Lojista("1223","Galvão");
 		Lojista lojista2 = new Lojista("9199", "Grafitte");

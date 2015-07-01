@@ -92,9 +92,6 @@ public class Usuario {
 	}
 	public void cadastrarUsuario()
 	{
-		//Usuario usuario = new Usuario();
-		//Busca buscar = new Busca();
-		//int numero=0;
 		
 		String a;
 
@@ -117,20 +114,6 @@ public class Usuario {
 		System.out.println("Informe o seu telefone: ");
 		a = sc.nextLine();
 		this.setTelefone(a);
-		
-		
-		//System.out.println(this);
-		
-		
-//		Repositorio repo = new Repositorio(2);
-	//	repo.salvarCadastroUsuario(this);
-		
-		
-		/*ArrayList<Usuario> array = new ArrayList<Usuario>();
-		
-		array.add(usuario);
-		
-		*///buscar.BuscaCEP(numero);
 		
 		sc.close();
 	}

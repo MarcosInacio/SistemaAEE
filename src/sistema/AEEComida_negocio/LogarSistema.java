@@ -7,7 +7,6 @@ public class LogarSistema {
 		
 	}
 	Scanner input = new Scanner(System.in);
-	//Menu meuM = new Menu();
 	BuscarCep buscar = new BuscarCep();
 	public void logarAcesso(){
 		System.out.println("Digite seu login: ");
@@ -19,7 +18,7 @@ public class LogarSistema {
 		}
 		buscar.BuscarCEP();
 		
-		//meuM.meuMenu();
+		
 	}
 }
 

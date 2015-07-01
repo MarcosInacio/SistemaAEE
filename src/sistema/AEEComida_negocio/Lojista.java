@@ -23,7 +23,7 @@ public class Lojista {
 		
 	}
 	
-	Menu meuM = new Menu();
+	MenuLojista menu = new MenuLojista();
 	public String getCnpj() 
 	{
 		return cnpj;
@@ -140,7 +140,7 @@ public class Lojista {
 			}
 			
 		}
-		meuM.meuMenu();
+		menu.opcoes();
 		scan.close();
 	}
 	

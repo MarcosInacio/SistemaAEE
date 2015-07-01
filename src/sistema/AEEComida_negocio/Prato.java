@@ -9,6 +9,12 @@ public class Prato {
 	private int contAvaliacoes;
 	
 	
+	public Prato(){
+		this.avaliacao = 0;
+		this.contAvaliacoes = 0;
+		
+	}
+	
 	
 	public Prato(String nome, double preco, String descricao){
 		
@@ -83,6 +89,13 @@ public class Prato {
 		
 	}
 
+	public String toString(){
+		
+		
+		return this.nome + "\n" + this.descricao + "\n" + this.preco 
+				+ "\n" + this.avaliacao +"\n"+ this.contAvaliacoes;
+		
+	}
 
 
 	

@@ -17,7 +17,7 @@ public class Menu {
 		Lojista loj = new Lojista();
 		BuscarCep cep = new BuscarCep();
 		LogarSistema logar = new LogarSistema();
-		ExitSistema saida = new ExitSistema();
+		//ExitSistema saida = new ExitSistema();
 		
 		System.out.println(this); 
 		int var=0;
@@ -48,7 +48,7 @@ public class Menu {
 			break;
 		
 		case 5:
-			saida.ExitSaida();
+			//saida.ExitSaida();
 			break;
 		default: 
 			meuMenu();

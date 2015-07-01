@@ -40,7 +40,7 @@ public class Menu {
 			break;
 			
 		case 3:
-			cep.BuscarCEP(var);
+			cep.BuscarCEP();
 			break;
 			
 		case 4:

@@ -17,7 +17,7 @@ public class LogarSistema {
 		if(senha != null && login !=null && login != ""){
 			System.out.println("Logado com sucesso!");
 		}
-		buscar.BuscarCEP(0);
+		buscar.BuscarCEP();
 		
 		//meuM.meuMenu();
 	}

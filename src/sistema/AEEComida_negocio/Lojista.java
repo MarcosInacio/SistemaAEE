@@ -4,14 +4,15 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import javax.swing.JOptionPane;
+
 public class Lojista {
 	private String cnpj;
 	private String nome;
 	private String senha;
 	private ArrayList<Restaurante> restaurante;
-	private int saldo;
-	
-	
+
+
 	public Lojista(){}
 	
 	public Lojista(String cnpj, String nome)
@@ -33,25 +34,11 @@ public class Lojista {
 
 
 	MenuLojista menu = new MenuLojista();
+	
 	public String getCnpj() 
 	{
 		return cnpj;
 	}
-	
-	public int getSaldo() 
-	{
-		System.out.println();
-		Random g = new Random();
-		return g.nextInt(1001);
-		
-	}
-
-
-	public void setSaldo(int saldo) 
-	{
-		this.saldo = saldo;
-	}
-
 
 	public void setCnpj(String cnpj) 
 	{
@@ -92,32 +79,26 @@ public class Lojista {
 		ArrayList<Lojista> loj = new ArrayList<Lojista>(); 
 		
 		String a;
-		System.out.println("Informe o seu CNPJ: ");
-		Lojista dono = new Lojista();
 		
-		Scanner sc = new Scanner(System.in);
-		a = sc.nextLine();
-		dono.setCnpj(a);
-		System.out.println("Informe o nome do restaurante: ");
-		a = sc.nextLine();
-		dono.setNome(a);
-		
-		if(dono.getSaldo()> 50)
-		{
-			System.out.println("Teje cadastrado!");
-			System.out.print("Crie sua senha: ");
-			a = sc.nextLine();
-			dono.setSenha(a);
-			loj.add(dono);
-			logar(loj);
-		}
-		else
-		{
-			System.out.println("Saldo menor que a constante do servico!!");
-			//repositorioNomes();
+		do{
+			a = JOptionPane.showInputDialog("Informe seu CNPJ");
+		}while(a.length()==0 || isCNPJ(a)== false);
 			
-		}
-		sc.close();
+		this.setCnpj(a);
+		
+		do{
+			a = JOptionPane.showInputDialog("Informe o nome do restaurante");
+		}while(a.length()==0);
+		
+		this.setNome(a);
+
+		System.out.println("Teje cadastrado!");
+		System.out.print("Crie sua senha: ");
+		this.setSenha(a);
+		loj.add(this);
+		logar(loj);
+		
+	//	sc.close();
 	}
 	
     public void logar(ArrayList<Lojista> arr)
@@ -152,5 +133,68 @@ public class Lojista {
 		menu.opcoes();
 		scan.close();
 	}
+    
+
+    	  public static boolean isCNPJ(String CNPJ) {
+    	// considera-se erro CNPJ's formados por uma sequencia de numeros iguais
+    	    if (CNPJ.equals("00000000000000") || CNPJ.equals("11111111111111") ||
+    	        CNPJ.equals("22222222222222") || CNPJ.equals("33333333333333") ||
+    	        CNPJ.equals("44444444444444") || CNPJ.equals("55555555555555") ||
+    	        CNPJ.equals("66666666666666") || CNPJ.equals("77777777777777") ||
+    	        CNPJ.equals("88888888888888") || CNPJ.equals("99999999999999") ||
+    	       (CNPJ.length() != 14))
+    	       return(false);
+
+    	    char dig13, dig14;
+    	    int sm, i, r, num, peso;
+
+    	// "try" - protege o código para eventuais erros de conversao de tipo (int)
+    	    
+    	// Calculo do 1o. Digito Verificador
+    	      sm = 0;
+    	      peso = 2;
+    	      for (i=11; i>=0; i--) {
+    	// converte o i-ésimo caractere do CNPJ em um número:
+    	// por exemplo, transforma o caractere '0' no inteiro 0
+    	// (48 eh a posição de '0' na tabela ASCII)
+    	        num = (int)(CNPJ.charAt(i) - 48);
+    	        sm = sm + (num * peso);
+    	        peso = peso + 1;
+    	        if (peso == 10)
+    	           peso = 2;
+    	      }
+
+    	      r = sm % 11;
+    	      if ((r == 0) || (r == 1))
+    	         dig13 = '0';
+    	      else dig13 = (char)((11-r) + 48);
+
+    	// Calculo do 2o. Digito Verificador
+    	      sm = 0;
+    	      peso = 2;
+    	      for (i=12; i>=0; i--) {
+    	        num = (int)(CNPJ.charAt(i)- 48);
+    	        sm = sm + (num * peso);
+    	        peso = peso + 1;
+    	        if (peso == 10)
+    	           peso = 2;
+    	      }
+
+    	      r = sm % 11;
+    	      if ((r == 0) || (r == 1))
+    	         dig14 = '0';
+    	      else dig14 = (char)((11-r) + 48);
+
+    	// Verifica se os dígitos calculados conferem com os dígitos informados.
+    	      if ((dig13 == CNPJ.charAt(12)) && (dig14 == CNPJ.charAt(13)))
+    	         return(true);
+    	      else return(false);
+    	  
+    	  }
+
+
+    	
+
 	
 }
+

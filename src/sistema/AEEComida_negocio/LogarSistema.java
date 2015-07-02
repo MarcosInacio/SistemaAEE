@@ -1,6 +1,7 @@
 package sistema.AEEComida_negocio;
 
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class LogarSistema {
     public LogarSistema(){
@@ -9,14 +10,13 @@ public class LogarSistema {
 	Scanner input = new Scanner(System.in);
 	BuscarCep buscar = new BuscarCep();
 	public void logarAcesso(){
-		System.out.println("Digite seu login: ");
-		String login = input.next();
-		System.out.println("Digite sua senha: ");
-		String senha = input.next();
-		if(senha != null && login !=null && login != ""){
-			System.out.println("Logado com sucesso!");
+		String cpf = JOptionPane.showInputDialog("Digite seu CPF");
+		String senha = JOptionPane.showInputDialog("Digite sua senha");
+		
+		if(senha != null && cpf !=null && cpf != ""){
+			buscar.BuscarCEP();
 		}
-		buscar.BuscarCEP();
+		
 		
 		
 	}

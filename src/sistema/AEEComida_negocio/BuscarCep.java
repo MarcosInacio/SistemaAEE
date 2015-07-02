@@ -21,8 +21,8 @@ public class BuscarCep {
 	Menu meuM = new Menu();
 	public void BuscarCEP() 
 	{
-		System.out.println("\nDigite seu CEP com 8 numeros para sabermos sua localidade: ");
-		String numBusca = scanner.next();
+	//	System.out.println("\nDigite seu CEP com 8 numeros para sabermos sua localidade: ");
+		String numBusca = JOptionPane.showInputDialog("Informe o seu CEP");
 		ListaRestaurante listaR = new ListaRestaurante();
 		
 		
@@ -33,8 +33,13 @@ public class BuscarCep {
 	                  .get();
 	//        Elements urlPesquisa = doc.select("span[itemprop=streetAddress]");
 	        
-	         System.out.println(doc.getElementsByAttributeValue("itemprop", "streetAddress").text());
-	         System.out.println(doc.getElementsByTag("td").get(2).text());
+	   //      System.out.println(doc.getElementsByAttributeValue("itemprop", "streetAddress").text());
+	         if(doc.getElementsByTag("td").isEmpty())
+	        	 JOptionPane.showMessageDialog(null, "CEP inválido");
+	         else 
+	        	 JOptionPane.showMessageDialog(null, doc.getElementsByAttributeValue("itemprop", "streetAddress").text() + 
+	        			 "\n" + doc.getElementsByTag("td").get(2).text());
+	    //     System.out.println(doc.getElementsByTag("td").get(2).text());
 	         listaR.ListRestaurante();
 	         
 	         //addressLocality retornaria a cidade	

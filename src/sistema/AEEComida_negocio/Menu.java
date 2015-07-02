@@ -2,6 +2,7 @@ package sistema.AEEComida_negocio;
 
 import java.util.Scanner;
 import sistema.AEEComida_dados.*;
+import javax.swing.JOptionPane;
 
 
 public class Menu {
@@ -18,11 +19,13 @@ public class Menu {
 		BuscarCep cep = new BuscarCep();
 		LogarSistema logar = new LogarSistema();
 		
-		System.out.println(this); 
+	//	System.out.println(this); 
 		int var=0;
 		
-		System.out.println("Digite sua opção: ");
-		var = input.nextInt();
+		//System.out.println("Digite sua opção: ");
+	//	var = input.nextInt();
+		
+		var = Integer.parseInt(JOptionPane.showInputDialog(this.toString()));
 		
 		switch(var)
 		{

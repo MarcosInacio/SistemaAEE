@@ -95,6 +95,7 @@ public class Usuario {
 	{
 		
 		String a;
+		String b;
 
 		Scanner sc = new Scanner(System.in);
 		
@@ -110,8 +111,11 @@ public class Usuario {
 		
 		do{
 			a = JOptionPane.showInputDialog("Crie uma senha");
-			this.setPassword(a);
-		}while(a.length()==0);
+			b = JOptionPane.showInputDialog("Repita a senha");
+			if(a.equals(b)){
+				this.setPassword(a);
+			}
+		}while(a.length()==0 && b.length()==0 || a.equals(b)== false);
 		
 		do{
 			a = JOptionPane.showInputDialog("Informe seu endereço");
@@ -120,8 +124,12 @@ public class Usuario {
 		
 		do{
 			a = JOptionPane.showInputDialog("Informe seu email");
-			this.setEmail(a);
-		}while(a.length()==0);
+			b = JOptionPane.showInputDialog("Repita seu email");
+			if(a.equals(b)){
+				this.setEmail(a);
+			}
+			
+		}while(a.length()==0 && b.length()==0 || a.equals(b)== false);
 		
 		do{
 			a = JOptionPane.showInputDialog("Informe seu telefone");

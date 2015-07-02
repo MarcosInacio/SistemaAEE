@@ -3,13 +3,14 @@ package sistema.AEEComida_negocio;
 import java.util.Scanner;
 import sistema.AEEComida_dados.*;
 import javax.swing.JOptionPane;
+import java.lang.NumberFormatException;
 
 
 public class Menu {
 	public Menu(){
 		
 	}
-	public void meuMenu(){
+	public void meuMenu() throws NumberFormatException{
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -19,13 +20,14 @@ public class Menu {
 		BuscarCep cep = new BuscarCep();
 		LogarSistema logar = new LogarSistema();
 		
-	//	System.out.println(this); 
 		int var=0;
 		
-		//System.out.println("Digite sua opção: ");
-	//	var = input.nextInt();
-		
-		var = Integer.parseInt(JOptionPane.showInputDialog(this.toString()));
+		try{
+			var = Integer.parseInt(JOptionPane.showInputDialog(this.toString()));
+		}catch(NumberFormatException ex){
+			JOptionPane.showMessageDialog(null, "Erro \nApenas números são aceitos");
+			
+		}
 		
 		switch(var)
 		{

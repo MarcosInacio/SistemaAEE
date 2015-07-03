@@ -22,8 +22,10 @@ public class Menu {
 		
 		int var=0;
 		
+	
 		try{
 			var = Integer.parseInt(JOptionPane.showInputDialog(this.toString()));
+			
 		}catch(NumberFormatException ex){
 			JOptionPane.showMessageDialog(null, "Erro \nApenas números são aceitos");
 			

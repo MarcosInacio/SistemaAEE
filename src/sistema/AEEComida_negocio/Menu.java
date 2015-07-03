@@ -3,8 +3,11 @@ package sistema.AEEComida_negocio;
 import java.util.Scanner;
 import sistema.AEEComida_dados.*;
 import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.lang.NumberFormatException;
-
+import java.io.ObjectOutputStream;
 
 public class Menu {
 	public Menu(){
@@ -19,7 +22,7 @@ public class Menu {
 		Lojista loj = new Lojista();
 		BuscarCep cep = new BuscarCep();
 		LogarSistema logar = new LogarSistema();
-		
+	
 		int var=0;
 		
 	
@@ -36,8 +39,8 @@ public class Menu {
 		
 		case 1 :
 			user.cadastrarUsuario();
-			
 			repo.salvarCadastroUsuario(user);
+			
 			break;
 	
 		case 2:

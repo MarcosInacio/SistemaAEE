@@ -1,13 +1,13 @@
 package sistema.AEEComida_negocio;
 
 import java.util.ArrayList;
-import java.util.Random;
+import java.io.Serializable;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-import javax.swing.JOptionPane;
 
-public class Lojista {
+public class Lojista implements Serializable{
+
 	private String cnpj;
 	private String nome;
 	private String senha;

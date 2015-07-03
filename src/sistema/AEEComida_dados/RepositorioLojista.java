@@ -1,12 +1,12 @@
 package sistema.AEEComida_dados;
 
 import sistema.AEEComida_negocio.Lojista;
+import java.io.Serializable;
 import sistema.AEEComida_negocio.Restaurante;
-
 import java.util.ArrayList;
 
 
-public class RepositorioLojista implements IRepositorioLojista {
+public class RepositorioLojista implements IRepositorioLojista, Serializable {
 
 	ArrayList<Lojista> arrayLojista = new ArrayList<Lojista>();
 	

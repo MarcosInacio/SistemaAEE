@@ -1,6 +1,7 @@
 package sistema.AEEComida_negocio;
 
 import java.util.Scanner;
+import java.io.Serializable;
 
 import sistema.AEEComida_dados.*;
 
@@ -12,7 +13,8 @@ import org.jsoup.nodes.Document;
 import java.net.SocketTimeoutException;
 import java.io.IOException;
 
-public class Usuario {
+public class Usuario implements Serializable {
+	
 	private String nome;
 	private String cpf;
 	private String telefone;
@@ -125,15 +127,6 @@ public class Usuario {
 		this.bairro = bairro;
 	}
 
-
-	public String toString()
-	{
-		
-		return "Nome: " + this.nome + "\nPontos: " + this.pontos + "\nEndereço: " + this.endereco
-				+ "\nEmail: " + this.email + "\nTelefone: " + this.telefone;
-		
-		
-	}
 	public void cadastrarUsuario()
 	{
 		
@@ -185,7 +178,7 @@ public class Usuario {
 			
 			this.bairro = doc.getElementsByTag("td").get(2).text();
 			this.cidade = doc.getElementsByAttributeValue("itemprop", "addressLocality").text();
-			this.endereco =  doc.getElementsByTag("td").get(2).text();
+			this.endereco =  doc.getElementsByAttributeValue("itemprop", "streetAddress").text();
 			
 			
 			
@@ -220,6 +213,8 @@ public class Usuario {
 			a = JOptionPane.showInputDialog("Informe seu telefone");
 			this.setTelefone(a);
 		}while(a.length()==0);
+	
+		JOptionPane.showMessageDialog(null, this.toString());
 		
 		sc.close();
 	}
@@ -268,5 +263,15 @@ public class Usuario {
 		      else return(false);
 		   
 		  }
+	
+	public String toString()
+	{
+		
+		return "Nome: " + this.nome + "\nPontos: " + this.pontos +"\nCidade: "+ this.cidade  + 
+				"\nBairro: " + this.bairro +"\nEndereço: " + this.endereco
+				+ "\nEmail: " + this.email + "\nTelefone: " + this.telefone;
+		
+		
+	}
 
 }

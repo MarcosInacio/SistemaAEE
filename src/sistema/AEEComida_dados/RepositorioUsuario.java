@@ -1,10 +1,10 @@
 package sistema.AEEComida_dados;
 
 import java.util.ArrayList;
-
+import java.io.Serializable;
 import sistema.AEEComida_negocio.*;
 
-public class RepositorioUsuario implements IRepositorioUsuario {
+public class RepositorioUsuario implements IRepositorioUsuario, Serializable {
 
 	private	ArrayList<Usuario> usuarios = new ArrayList<Usuario>();
 	

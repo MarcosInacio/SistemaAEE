@@ -75,9 +75,9 @@ public class Lojista implements Serializable{
 	}
 	
 	
-	public void cadastraLojista()
+	public void cadastraLojista(Controlador controler)
     {
-		ArrayList<Lojista> loj = new ArrayList<Lojista>(); 
+		 
 		
 		String a;
 		
@@ -95,8 +95,7 @@ public class Lojista implements Serializable{
 
 		  a = JOptionPane.showInputDialog("Crie a senha: ");
 		this.setSenha(a);
-		loj.add(this);
-		logar(loj);
+		controler.getRepositorioLojistas().salvaCadastroLojista(this);
 		
 	}
 	

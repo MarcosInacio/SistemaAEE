@@ -122,6 +122,28 @@ public class Usuario implements Serializable {
 		return bairro;
 	}
 
+	
+	
+
+	public String getPassword() {
+		return password;
+	}
+
+
+	public String getCpf() {
+		return cpf;
+	}
+
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
 
 	public void setBairro(String bairro) {
 		this.bairro = bairro;

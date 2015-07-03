@@ -6,6 +6,7 @@ import javax.swing.JOptionPane;
 import java.lang.NumberFormatException;
 
 
+
 public class Menu {
 	public Menu(){
 		
@@ -14,7 +15,7 @@ public class Menu {
 		
 		Scanner input = new Scanner(System.in);
 		
-		RepositorioUsuario repo = new RepositorioUsuario();
+		Controlador controler = new Controlador();
 		Usuario user = new Usuario();
 		Lojista loj = new Lojista();
 		BuscarCep cep = new BuscarCep();
@@ -37,12 +38,17 @@ public class Menu {
 		case 1 :
 			user.cadastrarUsuario();
 			
-			repo.salvarCadastroUsuario(user);
+			controler.getRepositorioUsuarios().salvarCadastroUsuario(user);
+			logar.logarAcesso(controler);
 			break;
 	
 		case 2:
 		
-			loj.cadastraLojista();
+			loj.cadastraLojista(controler);
+			controler.getRepositorioLojistas().salvaCadastroLojista(loj);
+			logar.logarAcesso(controler);
+			
+			
 			break;
 			
 		case 3:
@@ -50,7 +56,7 @@ public class Menu {
 			break;
 			
 		case 4:
-			logar.logarAcesso();
+			logar.logarAcesso(controler);
 			break;
 		
 		case 5:

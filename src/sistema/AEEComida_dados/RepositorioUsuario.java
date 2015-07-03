@@ -45,6 +45,10 @@ public class RepositorioUsuario implements IRepositorioUsuario, Serializable {
 		
 	}
 
+	public ArrayList<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
 	
 
 }

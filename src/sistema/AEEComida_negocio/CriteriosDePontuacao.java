@@ -1,3 +1,5 @@
+/*Não foi implementar essa classe no sistema!
+
 package sistema.AEEComida_negocio;
 
 public class CriteriosDePontuacao {
@@ -29,4 +31,4 @@ public class CriteriosDePontuacao {
 	public void setAcumuloPontos(){
 		
 	}
-}	
+}	*/

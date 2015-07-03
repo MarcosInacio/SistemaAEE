@@ -3,6 +3,7 @@ package sistema.AEEComida_negocio;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 import javax.swing.JOptionPane;
 
@@ -92,29 +93,23 @@ public class Lojista {
 		
 		this.setNome(a);
 
-		System.out.println("Teje cadastrado!");
-		System.out.print("Crie sua senha: ");
+		  a = JOptionPane.showInputDialog("Crie a senha: ");
 		this.setSenha(a);
 		loj.add(this);
 		logar(loj);
 		
-	//	sc.close();
 	}
 	
     public void logar(ArrayList<Lojista> arr)
     {
 		
-		String a;
-		String b;
-		
 		
 		Scanner scan = new Scanner(System.in);
 		
-		System.out.println("Acesse o sistema: \n");
-		System.out.println("Digite o Nome Do Restaurante para logar: ");
-		a = scan.nextLine();
-		System.out.println("Senha: ");
-		b = scan.nextLine(); 
+		//System.out.println("Acesse o sistema: \n");
+		//System.out.println("Digite o Nome Do Restaurante para logar: ");
+		String a = JOptionPane.showInputDialog("Digite o nome do Restaurante para logar: ");
+		String b = JOptionPane.showInputDialog("Senha: ");
 		
 		for(int i=0; i< arr.size(); i++)
 		{

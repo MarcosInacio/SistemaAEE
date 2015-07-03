@@ -12,7 +12,6 @@ public class RepositorioUsuario implements IRepositorioUsuario {
 	public RepositorioUsuario(){}
 	
 	Menu meuM = new Menu();
-	int n=0;
 	
 	@Override
 	public void salvarCadastroUsuario(Usuario usuario)
@@ -32,8 +31,8 @@ public class RepositorioUsuario implements IRepositorioUsuario {
 				System.out.println("\n\n");
 				
 			}
-			n=n+1;
-		//	meuM.meuMenu();
+
+		
      }
 	
 	@Override

@@ -18,7 +18,7 @@ public class BuscarCep {
 	
 	}
 	Menu meuM = new Menu();
-	public void BuscarCEP() 
+	public void buscarCEP() 
 	{
 	
 		String numBusca = JOptionPane.showInputDialog("Informe o seu CEP");

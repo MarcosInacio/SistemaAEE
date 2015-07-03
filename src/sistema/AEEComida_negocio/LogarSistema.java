@@ -22,18 +22,21 @@ public class LogarSistema {
 		
 		case 1: 
 			
-			String cpf = JOptionPane.showInputDialog("Digite seu CPF");
-			String senha = JOptionPane.showInputDialog("Digite sua senha");
-			
+			String cpf = JOptionPane.showInputDialog("Digite seu CPF: ");
+			String senha = JOptionPane.showInputDialog("Digite sua senha: ");
+			break;
 			//RepositorioUsuario repUser =  new RepositorioUsuario();
 			
-			
+		case 2:
+			String cnpj = JOptionPane.showInputDialog("Digite seu CNPJ: ");
+			senha = JOptionPane.showInputDialog("Digite sua senha: ");
+			break;
 		
 		}
 
 		
 	//	if(senha != null && cpf !=null && cpf != ""){
-			buscar.BuscarCEP();
+			buscar.buscarCEP();
 		}
 		
 		

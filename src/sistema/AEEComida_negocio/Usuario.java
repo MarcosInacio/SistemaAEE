@@ -1,8 +1,16 @@
 package sistema.AEEComida_negocio;
 
 import java.util.Scanner;
+
 import sistema.AEEComida_dados.*;
+
 import javax.swing.JOptionPane;
+
+import org.jsoup.*;
+import org.jsoup.nodes.Document;
+
+import java.net.SocketTimeoutException;
+import java.io.IOException;
 
 public class Usuario {
 	private String nome;
@@ -11,6 +19,9 @@ public class Usuario {
 	private String email;
 	private String password;
 	private int pontos;
+	private String cep;
+	private String cidade;
+	private String bairro;
 	private String endereco;
 	
 	
@@ -83,6 +94,38 @@ public class Usuario {
 		this.endereco = endereco;
 	}
 	
+	
+	
+	public String getCep() {
+		return cep;
+	}
+
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+
+	public String getCidade() {
+		return cidade;
+	}
+
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+
+	public String getBairro() {
+		return bairro;
+	}
+
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+
 	public String toString()
 	{
 		
@@ -96,6 +139,7 @@ public class Usuario {
 		
 		String a;
 		String b;
+		boolean ver = false;
 
 		Scanner sc = new Scanner(System.in);
 		
@@ -118,9 +162,50 @@ public class Usuario {
 		}while(a.length()==0 && b.length()==0 || a.equals(b)== false);
 		
 		do{
-			a = JOptionPane.showInputDialog("Informe seu endereço");
-			this.setEndereco(a);
-		}while(a.length()==0);
+			a = JOptionPane.showInputDialog("Informe seu cep");
+			try{
+				Document doc = Jsoup.connect("http://www.qualocep.com/busca-cep/"+a)
+						.timeout(120000)
+						.get();
+					ver = doc.getElementsByTag("td").get(2).text().isEmpty();
+			}catch(IOException c){
+			        	JOptionPane.showMessageDialog(null, "Não foi possivel efetuar a operação",
+			        			"Erro!", JOptionPane.INFORMATION_MESSAGE);
+			        }
+				
+			
+		}while(a.length()==0 || ver == true );
+		
+		
+		try{
+			
+			Document doc = Jsoup.connect("http://www.qualocep.com/busca-cep/"+a)
+	                  .timeout(120000)
+	                  .get();
+			
+			this.bairro = doc.getElementsByTag("td").get(2).text();
+			this.cidade = doc.getElementsByAttributeValue("itemprop", "addressLocality").text();
+			this.endereco =  doc.getElementsByTag("td").get(2).text();
+			
+			
+			
+		}catch (SocketTimeoutException e) {
+        	JOptionPane.showMessageDialog(null, "Não foi possivel efetuar a operação",
+        			"Erro!", JOptionPane.INFORMATION_MESSAGE);
+
+        } catch (HttpStatusException w) {
+        	JOptionPane.showMessageDialog(null, "Não foi possivel efetuar a operação",
+        			"Erro!", JOptionPane.INFORMATION_MESSAGE);
+			
+        }catch(IOException c){
+        	JOptionPane.showMessageDialog(null, "Não foi possivel efetuar a operação",
+        			"Erro!", JOptionPane.INFORMATION_MESSAGE);
+        }
+		
+		
+		
+		
+		
 		
 		do{
 			a = JOptionPane.showInputDialog("Informe seu email");

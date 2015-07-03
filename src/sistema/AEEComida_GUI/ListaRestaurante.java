@@ -1,4 +1,4 @@
-package sistema.AEEComida_negocio;
+package sistema.AEEComida_GUI;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,6 +6,7 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 
 import sistema.AEEComida_dados.*;
+import sistema.AEEComida_negocio.Lojista;
 
 public class ListaRestaurante {
 	public ListaRestaurante(){

@@ -1,8 +1,9 @@
 package sistema.AEEComida_dados;
 
+import sistema.AEEComida_GUI.Restaurante;
 import sistema.AEEComida_negocio.Lojista;
+
 import java.io.Serializable;
-import sistema.AEEComida_negocio.Restaurante;
 import java.util.ArrayList;
 
 

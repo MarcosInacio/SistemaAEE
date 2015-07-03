@@ -1,4 +1,4 @@
-package sistema.AEEComida_negocio;
+package sistema.AEEComida_GUI;
 
 import java.util.Scanner;
 

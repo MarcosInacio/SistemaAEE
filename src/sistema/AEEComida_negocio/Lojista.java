@@ -3,7 +3,13 @@ package sistema.AEEComida_negocio;
 import java.util.ArrayList;
 import java.io.Serializable;
 import java.util.Scanner;
+
+
 import javax.swing.JOptionPane;
+
+import sistema.AEEComida_GUI.Controlador;
+import sistema.AEEComida_GUI.MenuLojista;
+import sistema.AEEComida_GUI.Restaurante;
 
 
 public class Lojista implements Serializable{

@@ -1,8 +1,10 @@
-package sistema.AEEComida_negocio;
+package sistema.AEEComida_GUI;
 
 import java.util.Scanner;
-import sistema.AEEComida_dados.*;
+import sistema.AEEComida_negocio.*;
+
 import javax.swing.JOptionPane;
+
 import java.lang.NumberFormatException;
 
 

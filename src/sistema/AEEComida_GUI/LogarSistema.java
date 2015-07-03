@@ -1,8 +1,12 @@
-package sistema.AEEComida_negocio;
+package sistema.AEEComida_GUI;
 
 import java.util.Scanner;
-import sistema.AEEComida_negocio.Menu;
+
+import sistema.AEEComida_negocio.Lojista;
+import sistema.AEEComida_negocio.Usuario;
+
 import javax.swing.JOptionPane;
+
 import sistema.AEEComida_dados.*;
 
 public class LogarSistema {

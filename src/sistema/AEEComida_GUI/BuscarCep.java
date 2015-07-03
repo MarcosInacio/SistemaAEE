@@ -1,13 +1,16 @@
-package sistema.AEEComida_negocio;
+package sistema.AEEComida_GUI;
 
 import java.util.Scanner;
+
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.jsoup.nodes.Element;
 import org.jsoup.HttpStatusException;
+
 import java.net.SocketTimeoutException;
 import java.io.IOException;
+
 import javax.swing.JOptionPane;
 
 public class BuscarCep {

@@ -2,6 +2,8 @@ package sistema.AEEComida_dados;
 
 import java.util.ArrayList;
 import java.io.Serializable;
+
+import sistema.AEEComida_GUI.Menu;
 import sistema.AEEComida_negocio.*;
 
 public class RepositorioUsuario implements IRepositorioUsuario, Serializable {

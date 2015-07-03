@@ -14,7 +14,7 @@ public class ListaRestaurante {
 		RepositorioLojista repp = new RepositorioLojista();
 		Lojista lojista1 = new Lojista("1223","Galvão");
 		Lojista lojista2 = new Lojista("9199", "Grafitte");
-		Restaurante aee = new Restaurante("ruru", "rua armindo", "palmares", "paratibe",
+		Restaurante aee = new Restaurante("RU", "rua armindo", "palmares", "paratibe",
 				"53355326", "comida francesa");
 		Restaurante aeea = new Restaurante("solbrasa", "rua recife", "belem", "jpessoa", 
 				"76674523", "comida italiana");
@@ -26,6 +26,7 @@ public class ListaRestaurante {
 		for(Lojista loj : repp.getArrayLojista()){
 			for(int j = 0; j < loj.getRestaurante().size(); j++){
 				System.out.println(loj.getRestaurante());
+				
 			}
 			
 		}

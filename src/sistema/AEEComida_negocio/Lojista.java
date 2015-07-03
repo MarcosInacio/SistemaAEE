@@ -110,7 +110,7 @@ public class Lojista implements Serializable{
 		String a = JOptionPane.showInputDialog("Digite o nome do Restaurante para logar: ");
 		String b = JOptionPane.showInputDialog("Senha: ");
 		
-		for(int i=0; i< arr.size(); i++)
+		/*for(int i=0; i< arr.size(); i++)
 		{
 			
 			if(a.equals(arr.get(i).getNome()) && b.equals(arr.get(i).getSenha()))
@@ -123,7 +123,7 @@ public class Lojista implements Serializable{
 				logar(arr);
 			}
 			
-		}
+		}*/
 		menu.opcoes();
 		scan.close();
 	}

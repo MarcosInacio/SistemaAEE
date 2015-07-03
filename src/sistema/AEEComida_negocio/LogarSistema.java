@@ -31,7 +31,7 @@ public class LogarSistema {
 				if(cpf.equals(us.getCpf())== true && senha.equals(us.getPassword())== true)
 						JOptionPane.showMessageDialog(null, "Logado com sucesso!");
 				else
-					System.out.println("ERRO");
+					JOptionPane.showMessageDialog(null, "Erro!");
 			}
 			buscar.buscarCEP();
 			break;
@@ -48,7 +48,9 @@ public class LogarSistema {
 					
 					JOptionPane.showMessageDialog(null, "Logado com sucesso!");
 					
-				}else{ System.out.println("ERRO, man");}
+				}else{ 
+					JOptionPane.showMessageDialog(null, "Erro!");
+				}
 				
 			}
 			buscar.buscarCEP();
